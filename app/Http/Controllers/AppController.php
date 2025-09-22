@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Promotion;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,9 @@ class AppController extends Controller
     }
 
     public function aboutShow() {
-        return view("pages.about");
+        $reviews = Review::all();
+
+        return view("pages.about", compact("reviews"));
     }
 
     public function promotionsShow() {

@@ -190,6 +190,75 @@ ul {
     }
 }
 
+.about__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 52px;
+    color: white;
+    height: 400px;
+}
+
+@media (max-width: 1024px) {
+    .about__inner {
+        max-width: 70%;
+        margin-inline: auto;
+        flex-direction: column;
+        row-gap: 32px;
+        height: min-content;
+    }
+
+    .contacts {
+        width: 100% !important;
+    }
+}
+
+.reviews {
+    padding-block: 32px;
+    color: white;
+
+    h2 {
+        margin-bottom: 22px;
+    }
+}
+
+.contacts {
+    width: 50%;
+    padding-inline: 20px;
+    padding-block: 16px;
+    background-color: rgba(42, 42, 42, 0.6);
+    border-radius: 16px;
+}
+
+.review {
+    display: flex;
+    column-gap: 16px;
+    border-radius: 14px;
+    background-color: rgba(42, 42, 42, 0.6);
+    padding-inline: 14px;
+    padding-block: 10px;
+
+    img {
+        max-width: 42px;
+        max-height: 42px;
+        aspect-ratio: 1/1;
+    }
+}
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+.review__name {
+    font-size: 1rem;
+}
+
+.review__text{
+    font-size: 14px;
+    line-height: 100%;
+}
+
 @media (max-width: 1024px) {
     .promotions {
         flex-direction: column;
@@ -208,11 +277,18 @@ ul {
 }
 
 @media (max-width: 724px) {
-    .account__inner{
+    .account__inner {
         flex-direction: column;
         row-gap: 16px;
     }
-    .account__community{
+
+    .account__community {
         width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .about__inner {
+        max-width: 100%;
     }
 }

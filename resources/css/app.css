@@ -49,7 +49,7 @@ ul {
     font-size: 22px;
 }
 
-.header__inner{
+.header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,14 +59,14 @@ ul {
     margin-bottom: 30px;
 }
 
-.promotions{
+.promotions {
     display: flex;
     justify-content: space-between;
     column-gap: 32px;
     row-gap: 16px;
 }
 
-.promotions__card{
+.promotions__card {
     display: flex;
     flex-direction: column;
     column-gap: 16px;
@@ -86,7 +86,7 @@ ul {
     color: white;
 }
 
-.promotions__link{
+.promotions__link {
     display: inline-block;
     background-color: rgba(255, 0, 0, 0.58);
     border-radius: 30px;
@@ -99,19 +99,120 @@ ul {
     white-space: pre-line;
 }
 
+.account {
+    padding-inline: 32px;
+    padding-block: 16px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    width: max-content;
+    margin-inline: auto;
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 16px;
+    }
+}
+
+.account__left {
+    img {
+        margin-bottom: 12px;
+    }
+}
+
+.account__left-img-wrapper {
+    display: flex;
+    justify-self: center;
+}
+
+.account__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    color: white;
+}
+
+.account__fio {
+    font-size: 20px;
+    text-align: center;
+}
+
+.account__phone {
+    text-align: center;
+}
+
+.account__balance {
+    background-color: rgba(42, 42, 42, 0.6);
+    border-radius: 16px;
+    padding-block: 16px;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+
+.account__balance-title {
+    font-size: 24px;
+    text-align: center;
+}
+
+.account__balance-value {
+    font-size: 32px;
+    text-align: center;
+}
+
+.account__balance-links {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 14px;
+    margin-top: auto;
+
+    a {
+        display: block;
+        border-radius: 16px;
+        background-color: #bc0000;
+        padding-inline: 16px;
+        cursor: pointer;
+    }
+}
+
+.account__community {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    background-color: rgba(42, 42, 42, 0.6);
+    border-radius: 16px;
+    width: 200px;
+
+    > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 @media (max-width: 1024px) {
     .promotions {
         flex-direction: column;
         align-items: center;
     }
 
-    .promotions__card{
+    .promotions__card {
         width: 80%;
     }
 }
 
 @media (max-width: 724px) {
-    .promotions__card{
+    .promotions__card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 724px) {
+    .account__inner{
+        flex-direction: column;
+        row-gap: 16px;
+    }
+    .account__community{
         width: 100%;
     }
 }

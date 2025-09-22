@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Promotion;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -22,6 +23,8 @@ class AppController extends Controller
     }
 
     public function accountShow() {
-        return view("pages.account");
+        $user = User::first();
+
+        return view("pages.account", compact("user"));
     }
 }

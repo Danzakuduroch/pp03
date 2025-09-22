@@ -1,11 +1,117 @@
-@import 'tailwindcss';
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@font-face {
+    font-family: "Compliance Sans";
+    src: url("../../public/assets/fonts/Faithful.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+body {
+    background: linear-gradient(#6e0000, #000);
+    min-height: 100vh;
+    font-family: "Compliance Sans";
+}
+
+header {
+    padding-block: 15px;
+    padding-inline: 25px;
+    background: rgba(0, 0, 0, 0.4);
+    margin-bottom: 32px;
+}
+
+.container {
+    max-width: 1220px;
+    padding-inline: 10px;
+    margin-inline: auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav__item a {
+    font-size: 22px;
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__inner {
+    margin-bottom: 30px;
+}
+
+.promotions{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 32px;
+    row-gap: 16px;
+}
+
+.promotions__card{
+    display: flex;
+    flex-direction: column;
+    column-gap: 16px;
+    padding-inline: 16px;
+    padding-block: 32px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    width: 50%;
+}
+
+.promotions__img {
+    border-radius: 12px;
+}
+
+.promotions__info {
+    text-align: center;
+    color: white;
+}
+
+.promotions__link{
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.58);
+    border-radius: 30px;
+    padding-inline: 34px;
+    margin-top: 12px;
+    padding-block: 4px;
+}
+
+.promotions__text {
+    white-space: pre-line;
+}
+
+@media (max-width: 1024px) {
+    .promotions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .promotions__card{
+        width: 80%;
+    }
+}
+
+@media (max-width: 724px) {
+    .promotions__card{
+        width: 100%;
+    }
 }

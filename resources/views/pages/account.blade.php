@@ -26,8 +26,8 @@
                         <p class="account__balance-title">Ваш баланс</p>
                         <p class="account__balance-value">{{ $user->balance }}р</p>
                         <div class="account__balance-links">
-                            <a class="account__balance-add">Пополнить по карте</a>
-                            <a class="account__balance-sbp">Пополнить по СБП</a>
+                            <a class="account__balance-add" href="{{ route('pay.card') }}">Пополнить по карте</a>
+                            <a class="account__balance-sbp" href="{{ route('pay.sbp') }}">Пополнить по СБП</a>
                         </div>
                     </div>
                 </div>

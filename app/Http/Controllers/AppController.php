@@ -6,6 +6,7 @@ use App\Models\Promotion;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppController extends Controller
 {
@@ -26,7 +27,7 @@ class AppController extends Controller
     }
 
     public function accountShow() {
-        $user = User::first();
+        $user = Auth::user() ?? User::first();
 
         return view("pages.account", compact("user"));
     }

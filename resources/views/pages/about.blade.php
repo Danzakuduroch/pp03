@@ -23,6 +23,19 @@
             </div>
             <section class="reviews">
                 <h2>Отзывы</h2>
+                @auth
+                    <form method="POST" action="{{ route('reviews.store') }}" class="login__form reviews__form">
+                        @csrf
+                        <div class="login__field">
+                            <label for="text">Оставить отзыв</label>
+                            <textarea id="text" name="text" rows="4" class="textarea" required>{{ old('text') }}</textarea>
+                            @error('text')
+                                <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <button type="submit">Отправить</button>
+                    </form>
+                @endauth
                 @foreach($reviews as $review)
                     <div class="review">
                         <img src={{ $review->avatar }} alt="">

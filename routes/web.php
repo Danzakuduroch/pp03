@@ -10,6 +10,9 @@ Route::get('/', [AppController::class, "index"]);
 
 Route::get('/about', [AppController::class, "aboutShow"])->name("about");
 Route::get('/promotions', [AppController::class, "promotionsShow"])->name("promotions");
+Route::middleware('auth')->group(function () {
+    Route::post('/reviews', [AppController::class, 'reviewStore'])->name('reviews.store');
+});
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -37,5 +40,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/users/{user}/edit', [AdminController::class, 'usersEdit'])->name('users.edit');
         Route::put('/users/{user}', [AdminController::class, 'usersUpdate'])->name('users.update');
         Route::delete('/users/{user}', [AdminController::class, 'usersDestroy'])->name('users.destroy');
+        Route::post('/users/{user}/topup', [AdminController::class, 'usersTopUp'])->name('users.topup');
     });
 });

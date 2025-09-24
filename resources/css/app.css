@@ -223,6 +223,10 @@ ul {
     }
 }
 
+.reviews__form {
+    margin-bottom: 14px;
+}
+
 .contacts {
     width: 50%;
     padding-inline: 20px;
@@ -533,4 +537,20 @@ ul {
 
 .btn--danger {
     background-color: #9b1c1c;
+}
+
+.topup {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.topup__input {
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(42, 42, 42, 0.6);
+    color: #fff;
+    outline: none;
+    width: 110px;
 }

@@ -107,6 +107,17 @@ class AdminController extends Controller
         $user->delete();
         return redirect()->route('admin.users.index');
     }
+
+    public function usersTopUp(Request $request, User $user)
+    {
+        $data = $request->validate([
+            'amount' => ['required', 'integer', 'min:1'],
+        ]);
+
+        $user->increment('balance', (int) $data['amount']);
+
+        return redirect()->route('admin.users.index');
+    }
 }
 
 

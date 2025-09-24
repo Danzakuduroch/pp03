@@ -1,4 +1,8 @@
-@vite(['resources/css/app.css'])
+@if (app()->environment('testing'))
+    <link rel="stylesheet" href="/assets/fake.css">
+@else
+    @vite(['resources/css/app.css'])
+@endif
 
 <!DOCTYPE html>
 <html lang="en">

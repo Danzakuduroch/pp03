@@ -20,6 +20,24 @@ class AppController extends Controller
         return view("pages.about", compact("reviews"));
     }
 
+    public function reviewStore(Request $request) {
+
+        $validated = $request->validate([
+            'text' => ['required', 'string', 'max:1000'],
+        ]);
+
+        $user = Auth::user();
+
+        Review::create([
+            'name' => $user->name,
+            'text' => $validated['text'],
+            'avatar' => '/assets/images/logo.png',
+            'user_id' => $user->id,
+        ]);
+
+        return redirect()->route('about');
+    }
+
     public function promotionsShow() {
         $promotions = Promotion::all();
 

@@ -292,3 +292,135 @@ ul {
         max-width: 100%;
     }
 }
+
+/* Login page */
+.login {
+    padding-inline: 32px;
+    padding-block: 16px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    width: min(560px, 100%);
+    margin-inline: auto;
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 16px;
+    }
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+.login__field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+
+    label {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(42, 42, 42, 0.6);
+        color: #fff;
+        outline: none;
+    }
+}
+
+.login__form button {
+    background-color: #bc0000;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.error {
+    color: #ff9b9b;
+    font-size: 12px;
+}
+
+/* Payment pages */
+.payment {
+    padding-inline: 32px;
+    padding-block: 16px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    width: min(720px, 100%);
+    margin-inline: auto;
+    color: #fff;
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 16px;
+    }
+}
+
+.payment__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+.payment__field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+
+    label {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(42, 42, 42, 0.6);
+        color: #fff;
+        outline: none;
+    }
+}
+
+.payment__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.payment__form button {
+    align-self: start;
+    background-color: #bc0000;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.payment--sbp .payment__qr {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+@media (max-width: 520px) {
+    .payment__grid {
+        grid-template-columns: 1fr;
+    }
+}

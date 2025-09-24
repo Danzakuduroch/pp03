@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -184,7 +186,7 @@ ul {
     border-radius: 16px;
     width: 200px;
 
-    > div {
+    >div {
         display: flex;
         justify-content: space-between;
     }
@@ -244,7 +246,7 @@ ul {
     }
 }
 
-.reviews{
+.reviews {
     display: flex;
     flex-direction: column;
     row-gap: 14px;
@@ -254,7 +256,7 @@ ul {
     font-size: 1rem;
 }
 
-.review__text{
+.review__text {
     font-size: 14px;
     line-height: 100%;
 }
@@ -293,7 +295,6 @@ ul {
     }
 }
 
-/* Login page */
 .login {
     padding-inline: 32px;
     padding-block: 16px;
@@ -301,11 +302,24 @@ ul {
     border-radius: 16px;
     width: min(560px, 100%);
     margin-inline: auto;
+    color: white;
 
     h2 {
         text-align: center;
         color: white;
         margin-bottom: 16px;
+    }
+}
+
+.login__register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 100%;
+    margin-top: 16px;
+
+    a {
+        color: rgb(192, 0, 192);
     }
 }
 
@@ -325,11 +339,20 @@ ul {
         font-size: 14px;
     }
 
+    input[type="text"],
     input[type="email"],
     input[type="password"] {
         padding: 10px 12px;
         border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.15);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(42, 42, 42, 0.6);
+        color: #fff;
+        outline: none;
+    }
+    textarea.textarea {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(42, 42, 42, 0.6);
         color: #fff;
         outline: none;
@@ -388,7 +411,7 @@ ul {
     input[type="password"] {
         padding: 10px 12px;
         border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.15);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(42, 42, 42, 0.6);
         color: #fff;
         outline: none;
@@ -419,8 +442,95 @@ ul {
     row-gap: 10px;
 }
 
+.payment--sbp .payment__qr .qr {
+    max-width: 240px;
+}
+
 @media (max-width: 520px) {
     .payment__grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Admin */
+.admin {
+    padding-inline: 32px;
+    padding-block: 16px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    color: #fff;
+}
+
+.admin__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.admin__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(42, 42, 42, 0.6);
+    border-radius: 16px;
+    padding: 16px 20px;
+}
+
+.admin__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.table {
+    display: grid;
+    row-gap: 8px;
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 260px;
+    column-gap: 8px;
+    align-items: center;
+    background: rgba(42, 42, 42, 0.6);
+    padding: 10px 12px;
+    border-radius: 12px;
+}
+
+.table__row--head {
+    background: rgba(0, 0, 0, 0.35);
+    font-weight: bold;
+}
+
+.table__cell--actions {
+    display: flex;
+    column-gap: 8px;
+}
+
+.promotions__form, .users__form {
+    height: 43px;
+
+    button {
+        height: 100%;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background-color: #bc0000;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.btn--sm {
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+.btn--danger {
+    background-color: #9b1c1c;
 }

@@ -1,17 +1,24 @@
 @extends("index")
 
-@section("title", "Вход")
+@section("title", "Регистрация")
 
 @section("main")
     <main class="main">
         <div class="main__inner container">
             <section class="login">
-                <h2>Вход</h2>
-                <form method="POST" action="{{ route('login.perform') }}" class="login__form">
+                <h2>Регистрация</h2>
+                <form method="POST" action="{{ route('register.perform') }}" class="login__form">
                     @csrf
                     <div class="login__field">
+                        <label for="name">Имя</label>
+                        <input id="name" name="name" type="text" value="{{ old('name') }}" required>
+                        @error('name')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="login__field">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" value="{{ old('email') }}" required autofocus>
+                        <input id="email" name="email" type="email" value="{{ old('email') }}" required>
                         @error('email')
                             <div class="error">{{ $message }}</div>
                         @enderror
@@ -24,15 +31,11 @@
                         @enderror
                     </div>
                     <div class="login__field">
-                        <label>
-                            <input type="checkbox" name="remember"> Запомнить меня
-                        </label>
+                        <label for="password_confirmation">Подтвердите пароль</label>
+                        <input id="password_confirmation" name="password_confirmation" type="password" required>
                     </div>
-                    <button type="submit">Войти</button>
+                    <button type="submit">Зарегистрироваться</button>
                 </form>
-                <div class="login__register">
-                    <span>Нет аккаунта?</span> <a href="{{ route('register') }}">Зарегистрируйтесь</a>
-                </div>
             </section>
         </div>
     </main>

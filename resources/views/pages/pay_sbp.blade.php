@@ -13,7 +13,7 @@
                 </div>
                 <div class="payment__qr">
                     <p>Сканируйте QR-код для оплаты:</p>
-                    <img src="/assets/images/qr.png" alt="QR код СБП" style="max-width:240px">
+                    <img class="qr" src="/assets/images/qr.png" alt="QR код СБП">
                 </div>
             </section>
         </div>

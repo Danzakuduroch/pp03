@@ -51,6 +51,21 @@ ul {
     font-size: 22px;
 }
 
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-family: "Compliance Sans";
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+}
+
+.logout-btn:hover {
+    color: #ff9b9b;
+}
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -353,6 +368,7 @@ ul {
         color: #fff;
         outline: none;
     }
+
     textarea.textarea {
         padding: 10px 12px;
         border-radius: 12px;
@@ -377,7 +393,6 @@ ul {
     font-size: 12px;
 }
 
-/* Payment pages */
 .payment {
     padding-inline: 32px;
     padding-block: 16px;
@@ -456,7 +471,6 @@ ul {
     }
 }
 
-/* Admin */
 .admin {
     padding-inline: 32px;
     padding-block: 16px;
@@ -494,12 +508,114 @@ ul {
 
 .table__row {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr 260px;
+    grid-template-columns: 80px 1fr 1fr 430px;
     column-gap: 8px;
     align-items: center;
     background: rgba(42, 42, 42, 0.6);
     padding: 10px 12px;
     border-radius: 12px;
+}
+
+.table__cell {
+    a {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .table__row {
+        grid-template-columns: 60px 1fr 1fr 400px;
+        column-gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .table__cell {
+        font-size: 14px;
+    }
+
+    .btn--sm {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .topup__input {
+        width: 80px;
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table__row {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+        padding: 12px;
+    }
+
+    .table__row--head {
+        display: none;
+    }
+
+    .table__row:not(.table__row--head) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .table__row:not(.table__row--head) .table__cell {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .table__row:not(.table__row--head) .table__cell:last-child {
+        border-bottom: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .table__row:not(.table__row--head) .table__cell:first-child::before {
+        content: "ID: ";
+    }
+
+    .table__row:not(.table__row--head) .table__cell:nth-child(2)::before {
+        content: "Имя: ";
+    }
+
+    .table__row:not(.table__row--head) .table__cell:nth-child(3)::before {
+        content: "Email: ";
+    }
+
+    .table__row:not(.table__row--head) .table__cell:nth-child(4)::before {
+        content: "Действия: ";
+    }
+
+    .table__cell--actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px;
+    }
+
+    .topup {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .topup__input {
+        width: 100% !important;
+    }
+
+    .topup button {
+        width: 100%;
+    }
+
+    .users__form button {
+        width: 100%;
+    }
 }
 
 .table__row--head {
@@ -512,7 +628,8 @@ ul {
     column-gap: 8px;
 }
 
-.promotions__form, .users__form {
+.promotions__form,
+.users__form {
     height: 43px;
 
     button {
@@ -553,4 +670,111 @@ ul {
     color: #fff;
     outline: none;
     width: 110px;
+}
+
+/* Адаптивность для форм админ панели */
+@media (max-width: 768px) {
+    .admin {
+        padding-inline: 16px;
+        padding-block: 12px;
+    }
+
+    .admin__header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .admin__header h2 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .login__form {
+        row-gap: 12px;
+    }
+
+    .login__field {
+        row-gap: 4px;
+    }
+
+    .login__field label {
+        font-size: 13px;
+    }
+
+    .login__field input,
+    .login__field textarea {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .login__form button {
+        padding: 12px 16px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .promotions__form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin {
+        padding-inline: 12px;
+        padding-block: 10px;
+    }
+
+    .login__field input,
+    .login__field textarea {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .login__form button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Alert messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert p {
+    margin: 0;
+}
+
+/* Payment info */
+.payment__info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+.payment__info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.payment__info strong {
+    color: #495057;
 }

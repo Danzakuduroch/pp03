@@ -13,11 +13,27 @@
                         Акции
                     </a>
                 </li>
+                @auth
                 <li class="nav__item">
                     <a href={{ route("account") }}>
                         Аккаунт
                     </a>
                 </li>
+                <li class="nav__item">
+                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="logout-btn">
+                            Выход
+                        </button>
+                    </form>
+                </li>
+                @else
+                <li class="nav__item">
+                    <a href={{ route("login") }}>
+                        Вход
+                    </a>
+                </li>
+                @endauth
             </ul>
         </nav>
     </div>

@@ -24,6 +24,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/pay/card', [PaymentController::class, 'showCard'])->name('pay.card');
     Route::get('/pay/sbp', [PaymentController::class, 'showSbp'])->name('pay.sbp');
 
+    // Платежные маршруты
+    Route::post('/payment/create', [PaymentController::class, 'createPayment'])->name('payment.create');
+    Route::get('/payment/success', [PaymentController::class, 'paymentSuccess'])->name('payment.success');
+    Route::get('/payment/cancel', [PaymentController::class, 'paymentCancel'])->name('payment.cancel');
+    Route::post('/payment/webhook', [PaymentController::class, 'webhook'])->name('payment.webhook');
+    Route::post('/payment/check-status', [PaymentController::class, 'checkStatus'])->name('payment.check-status');
+
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
 

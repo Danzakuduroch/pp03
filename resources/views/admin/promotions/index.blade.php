@@ -19,10 +19,10 @@
                     </div>
                     @foreach ($promotions as $promotion)
                         <div class="table__row">
-                            <div class="table__cell">{{ $promotion->id }}</div>
-                            <div class="table__cell">{{ $promotion->title }}</div>
-                            <div class="table__cell">{{ $promotion->image }}</div>
-                            <div class="table__cell table__cell--actions">
+                            <div class="table__cell" data-label="ID">{{ $promotion->id }}</div>
+                            <div class="table__cell" data-label="Название">{{ $promotion->title }}</div>
+                            <div class="table__cell" data-label="Картинка">{{ $promotion->image }}</div>
+                            <div class="table__cell table__cell--actions" data-label="Действия">
                                 <a class="btn btn--sm" href="{{ route('admin.promotions.edit', $promotion) }}">Редактировать</a>
                                 <form class="promotions__form" method="POST" action="{{ route('admin.promotions.destroy', $promotion) }}">
                                     @csrf

@@ -19,10 +19,10 @@
                     </div>
                     @foreach ($users as $user)
                         <div class="table__row">
-                            <div class="table__cell">{{ $user->id }}</div>
-                            <div class="table__cell">{{ $user->name }}</div>
-                            <div class="table__cell">{{ $user->email }}</div>
-                            <div class="table__cell table__cell--actions">
+                            <div class="table__cell" data-label="ID">{{ $user->id }}</div>
+                            <div class="table__cell" data-label="Имя">{{ $user->name }}</div>
+                            <div class="table__cell" data-label="Email">{{ $user->email }}</div>
+                            <div class="table__cell table__cell--actions" data-label="Действия">
                                 <form method="POST" class="topup">
                                     @csrf
                                     <input class="topup__input" type="number" name="amount" min="1" placeholder="Сумма">
